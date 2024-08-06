@@ -29,6 +29,9 @@ jobs:
           node-version-file: '.node-version'
           cache: npm
           cache-dependency-path: 'package-lock.json'
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
       - name: install env
         run: |
           ls -la
@@ -36,8 +39,5 @@ jobs:
           echo $SHELL
           cat package.json
           npm install
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
       - name: build remix
         run: npm run build
