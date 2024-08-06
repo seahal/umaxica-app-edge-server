@@ -32,6 +32,6 @@ jobs:
           pwd
           echo $SHELL
           cat package.json
-#          npm install
+          npm install
       - name: build remix
         run: npm run build
