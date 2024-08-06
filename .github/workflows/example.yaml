@@ -18,8 +18,7 @@ jobs:
           node-version-file: '.node-version'
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
-      - name: nextage
-        run: |
-          ls -la
+      - name: install env
+        run: npm i
       - name: build remix
         run: npm run build
