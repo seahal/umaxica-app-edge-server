@@ -1,21 +1,19 @@
- name: Ruby Gem
- on:
-   push:
-     branches: [ "main" ]
-   pull_request:
-     branches: [ "main" ]
- jobs:
-   build:
-     name: Build + Publish
-     runs-on: ubuntu-latest
-     permissions:
-       contents: read
-       packages: write
-     steps:
+name: install node runtime
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  example:
+    name: Build + Publish
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
       - name: Set up node
         uses: actions/setup-node@v4
         with:
           node-version: 22.5.1
-     - name: nextage
-       - run: ls
+      - name: nextage
+        run: ls
