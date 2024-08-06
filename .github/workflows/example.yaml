@@ -13,16 +13,9 @@
        packages: write
      steps:
      - uses: actions/checkout@v4
-     - name: Set up Ruby
-       uses: ruby/setup-ruby@v1
+     - name: Set up node
+       uses: actions/setup-node@v4
        with:
-         ruby-version: 3.3.4
-         bundler-cache: true
-     - name: Publish to GPR
-       run: |
-         date
-         pwd
-         ls
-         docker compose run ror rails about
+         node-version: 22.5.1
      - name: nextage
        - run: ls
