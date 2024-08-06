@@ -23,6 +23,7 @@ jobs:
         run: |
           ls -la
           pwd
+          cat package.json
           npm install
       - name: build remix
         run: npm run build
