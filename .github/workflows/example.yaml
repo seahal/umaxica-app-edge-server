@@ -1,4 +1,4 @@
-name: install node runtime
+name: knowing GitHub Actions
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
@@ -10,7 +10,7 @@ defaults:
     shell: bash
 jobs:
   example:
-    name: Build + Publish
+    name: Build
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -24,14 +24,7 @@ jobs:
           cache-dependency-path: 'package-lock.json'
       - name: Install dependencies
         run: npm ci
-#      - name: Setup tmate session
-#        uses: mxschmitt/action-tmate@v3
-      - name: install env
-        run: |
-          ls -la
-          pwd
-          echo $SHELL
-          cat package.json
-          npm install
       - name: build remix
         run: npm run build
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v3

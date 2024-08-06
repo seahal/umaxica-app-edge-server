@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "remix vite:dev",
+    "dev:alt" : "remix dev -c \"node ./server.js\"",
     "build": "remix vite:build",
     "preview": "remix-serve ./build/server/index.js",
     "fastly:preview": "remix-serve ./build/server/index.js",
@@ -16,6 +17,7 @@
     "@remix-run/node": "^2.11.1",
     "@remix-run/react": "^2.11.1",
     "@remix-run/serve": "^2.11.1",
+    "@remix-run/testing": "^2.11.1",
     "esbuild": "^0.17.6",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
