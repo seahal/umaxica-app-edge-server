@@ -17,7 +17,7 @@ export const loader = async ({params, request}: LoaderFunctionArgs) => {
 
 export default function sample_index() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    let data = useActionData<typeof action>();
+    const data = useActionData<typeof action>();
     console.log('[C] ' + data)
     //const params = useParams();
     // const data: Former = useLoaderData<typeof loader>();

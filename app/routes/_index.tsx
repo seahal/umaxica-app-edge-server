@@ -7,6 +7,7 @@
 // };
 
 import appStylesHref from "./app.css?url";
+import {LoaderFunctionArgs} from "@remix-run/node";
 
 export const links = () => [{rel: 'stylesheet', href: appStylesHref}];
 
@@ -23,4 +24,7 @@ export default function index() {
     );
 }
 
-
+export const loader = async() => {
+    console.log(process.env.RAILS_URL);
+    return null;
+}

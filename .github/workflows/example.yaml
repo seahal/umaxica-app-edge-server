@@ -10,10 +10,13 @@ jobs:
     name: Build + Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up node
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: SetUp
         uses: actions/setup-node@v4
         with:
-          node-version: 22.5.1
+          node-version-file: '.node-version'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
       - name: nextage
         run: ls
