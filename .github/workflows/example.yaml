@@ -21,7 +21,8 @@ jobs:
           cache-dependency-path: 'package-lock.json'
       - name: install env
         run: |
-          npm
+          ls -la
+          pwd
           npm install
       - name: build remix
         run: npm run build
