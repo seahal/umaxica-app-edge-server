@@ -6,10 +6,10 @@
 //   ];
 // };
 
-import appStylesHref from 'app/app.css?url';
-import {LoaderFunctionArgs} from "@remix-run/node";
+// import appStylesHref from "app.css?url"
+// import {LoaderFunctionArgs} from "@remix-run/node";
 
-export const links = () => [{rel: 'stylesheet', href: appStylesHref}];
+//export const links = () => [{rel: 'stylesheet', href: appStylesHref}];
 
 export default function index() {
     return (
@@ -18,6 +18,8 @@ export default function index() {
                 <h1 className="text-3xl">Welcome to Remix</h1>
                 <ul className="list-disc mt-4 pl-6 space-y-2">
                     <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
                 </ul>
             </div>
         </>

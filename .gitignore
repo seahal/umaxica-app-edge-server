@@ -1,6 +1,4 @@
-node_modules
-/.cache
-.env
-.idea
-.DS_Store
+/node_modules
+/bin
 /build
+/pkg

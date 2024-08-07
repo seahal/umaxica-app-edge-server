@@ -1,7 +1,7 @@
 import {ActionFunctionArgs, json, LoaderFunctionArgs, redirect} from "@remix-run/node";
 import {useActionData} from "@remix-run/react";
-import {footer as Footer, SampleHeader as Header} from '~/routes/parts/header';
-import {SampleForm as Forming} from "~/routes/parts/form";
+//import {Footer as Footer, SampleHeader as Header} from './parts/header';
+//import {SampleForm as Forming} from "~/routes/parts/form";
 
 type Former = {
     title: string,
@@ -24,9 +24,9 @@ export default function sample_index() {
     //console.log(`[Default] title: ${1} , description: ${params.description} <= ?????`);
     return (<>
         <p>{data?.message ?? ''}</p>
-        <Header/>
-        <Forming/>
-        <Footer/>
+//        <Header/>
+//        <Forming/>
+//        <Footer/>
     </>);
 }
 

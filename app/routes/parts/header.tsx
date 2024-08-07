@@ -5,7 +5,7 @@ export function SampleHeader() {
     </>);
 }
 
-export function footer() {
+export function Footer() {
     return (<>
         <hr/>
         <center><p>This is the end fo line</p>{new Date().getTime().toString()}</center>
