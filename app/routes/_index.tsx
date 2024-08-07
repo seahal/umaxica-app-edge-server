@@ -6,7 +6,7 @@
 //   ];
 // };
 
-import appStylesHref from "./app.css?url";
+import appStylesHref from 'app/app.css?url';
 import {LoaderFunctionArgs} from "@remix-run/node";
 
 export const links = () => [{rel: 'stylesheet', href: appStylesHref}];

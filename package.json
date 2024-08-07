@@ -21,7 +21,10 @@
     "esbuild": "^0.17.6",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@fastify/middie": "^8.3.1",
+    "@fastify/static": "^7.0.4",
+    "@mcansh/remix-fastify": "3.3.3"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.10.3",
