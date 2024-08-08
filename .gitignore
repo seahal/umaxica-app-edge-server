@@ -3,3 +3,12 @@
 /build
 /pkg
 /.cache
+.DS_Store
+node_modules
+/build
+/public/build
+/bin
+/pkg
+/static-publisher
+.publish-id
+static-publish.rc.js
