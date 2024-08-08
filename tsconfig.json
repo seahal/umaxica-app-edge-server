@@ -8,7 +8,8 @@
     "lib": [ "es2022" ],
     "rootDir": "src",
     "outDir": "build",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "react-jsx"
   },
   "include": [
     "./src/**/*.js",

@@ -7,9 +7,11 @@
 // };
 
 // import appStylesHref from "app.css?url"
-// import {LoaderFunctionArgs} from "@remix-run/node";
+import {LoaderFunctionArgs} from "@remix-run/node";
 
 //export const links = () => [{rel: 'stylesheet', href: appStylesHref}];
+
+import {Outlet} from "@remix-run/react";
 
 export default function index() {
     return (
@@ -22,6 +24,7 @@ export default function index() {
                     <li>C</li>
                 </ul>
             </div>
+            <Outlet />
         </>
     );
 }

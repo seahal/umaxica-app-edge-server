@@ -24,7 +24,7 @@ async function handleRequest(event: FetchEvent) {
   console.log("FASTLY_SERVICE_VERSION:", env('FASTLY_SERVICE_VERSION') || 'local');
 
   // Get the client request.
-  let req = event.request;
+  const req = event.request;
 
   // Filter requests that have unexpected methods.
   if (!["HEAD", "GET", "PURGE"].includes(req.method)) {
@@ -33,7 +33,7 @@ async function handleRequest(event: FetchEvent) {
     });
   }
 
-  let url = new URL(req.url);
+  const url = new URL(req.url);
 
   // If request is to the `/` path...
   if (url.pathname == "/") {

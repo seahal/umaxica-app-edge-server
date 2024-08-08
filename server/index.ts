@@ -12,5 +12,5 @@ await app.register(remixFastify);
 const port = Number(process.env.PORT) || 3000;
 const host = process.env.HOST === "true" ? "0.0.0.0" : "127.0.0.1";
 
-let address = await app.listen({ port, host });
+const address = await app.listen({ port, host });
 console.log(`✅ app ready: ${address}`);
