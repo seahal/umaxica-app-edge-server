@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "dev": "remix vite:dev",
     "build": "remix vite:build",
     "build:tsc": "remix vite:build && tsc --project ./tsconfig.server.json",
-    "dev": "remix vite:dev",
     "dev:alt": "remix dev -c \"node ./server.js\"",
     "preview": "remix-serve ./build/server/index.js",
     "lint": "eslint --fix --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
@@ -15,15 +15,21 @@
     "fastly:preview": "remix-serve ./build/server/index.js",
     "fastly:prebuild": "tsc",
     "fastly:build": "js-compute-runtime build/server/index.js bin/main.wasm",
-    "fastly:deploy": "fastly compute publish"
+    "fastly:deploy": "fastly compute publish",
+    "build:fastly": "npm run build:remix && npm run build:fastly",
+    "build:remix": "remix build",
+    "prebuild:fastly": "compute-js-static-publish --build-static --suppress-framework-warnings"
   },
   "dependencies": {
+    "@fastly/remix-server-adapter": "^4.0.0",
+    "@fastly/remix-server-runtime": "^4.0.0",
+    "@remix-run/css-bundle": "^2.11.1",
+    "@remix-run/react": "^2.11.1",
     "@remix-run/serve": "^2.11.1",
     "@remix-run/testing": "^2.11.1",
     "esbuild": "^0.17.6",
     "cross-env": "^7.0.3",
     "@remix-run/node": "^2.11.1",
-    "@remix-run/react": "^2.11.1",
     "@fastify/middie": "^8.3.1",
     "@fastify/static": "^7.0.4",
     "@fastly/js-compute": "^3.19.0",
@@ -50,7 +56,8 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.1.6",
     "vite": "^5.3.5",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "npm-run-all": "^4.1.5"
   },
   "engines": {
     "node": ">=20.0.0"
