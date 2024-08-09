@@ -38,7 +38,7 @@ jobs:
       - name: Five
         env:
           RESULT: ${{steps.source.outputs.result}}
-        run: echo "${RESULT}"
+        run: echo ${RESULT}
       - name: build remix
         run: npm run build
         if: ${{ success() }}
