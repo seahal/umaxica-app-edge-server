@@ -33,6 +33,12 @@ jobs:
         run: export RESULT="hello"
       - name: Three
         run: echo ${RESULT}
+      - name: Four
+        run: echo "result=Hello" >> "${GITHUB_OUTPUT}"
+      - name: Five
+        env:
+          RESULT: ${{steps.source.outputs.result}}
+        run: echo "${RESULT}"
       - name: build remix
         run: npm run build
         if: ${{ success() }}
