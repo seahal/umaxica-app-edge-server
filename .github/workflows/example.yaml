@@ -26,5 +26,8 @@ jobs:
         run: npm ci
       - name: build remix
         run: npm run build
+      - name: One
+        run: date
+        if: ${{ always() }}
 #      - name: Setup tmate session
 #        uses: mxschmitt/action-tmate@v3
