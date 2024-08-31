@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "remix vite:dev",
+    "dev": "remix vite:dev --host 0.0.0.0",
     "build": "remix vite:build",
     "build:tsc": "remix vite:build && tsc --project ./tsconfig.server.json",
     "dev:alt": "remix dev -c \"node ./server.js\"",
