@@ -20,8 +20,6 @@ jobs:
         uses: oven-sh/setup-bun@v2
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
-      - name: Install dependencies
-        run: bun ci
       - name: One
         run: date
         if: ${{ always() }}
