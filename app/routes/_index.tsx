@@ -19,9 +19,15 @@ export default function index() {
             <div className="font-sans p-4">
                 <h1 className="text-3xl">Welcome to Remix</h1>
                 <ul className="list-disc mt-4 pl-6 space-y-2">
-                    <li>A</li>
-                    <li>B</li>
-                    <li>C</li>
+                    <li>
+                        <a href=''>Homepage</a>
+                    </li>
+                    <li>
+                        <a href='http://localhost:3000/registration/new'>Sign Up</a>
+                    </li>
+                    <li>
+                        <a href='http://localhost:3000/session/new'>Sign In</a>
+                    </li>
                 </ul>
             </div>
             <Outlet />
