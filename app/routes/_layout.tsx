@@ -12,20 +12,3 @@ export const meta: MetaFunction = ({error}) => {
 };
 
 
-export function ErrorBoundary() {
-    const error = useRouteError();
-
-    if (isRouteErrorResponse(error)) {
-        if (error.status === 404) {
-            return <p>404</p>;
-        }
-
-        throw new Error(`${error.status} ${error.statusText}`);
-    }
-
-    throw new Error(error instanceof Error ? error.message : 'Unknown Error');
-}
-
-export default function layout() {
-    return <Outlet />;
-}

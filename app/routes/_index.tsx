@@ -1,4 +1,3 @@
-//
 // export const meta: MetaFunction = () => {
 //   return [
 //     { title: "New Remix App" },
@@ -6,14 +5,7 @@
 //   ];
 // };
 
-// import appStylesHref from "app.css?url"
-import {LoaderFunctionArgs} from "@remix-run/node";
-
-//export const links = () => [{rel: 'stylesheet', href: appStylesHref}];
-
-import {Outlet} from "@remix-run/react";
-
-export default function index() {
+export default function IndexComponent() {
     return (
         <>
             <div className="font-sans p-4">
@@ -28,14 +20,11 @@ export default function index() {
                     <li>
                         <a href='http://localhost:3000/session/new'>Sign In</a>
                     </li>
+                    <li>
+                        <a href='http://localhost:3000/health'>health status</a>
+                    </li>
                 </ul>
             </div>
-            <Outlet />
         </>
     );
-}
-
-export const loader = async() => {
-    console.log(process.env.RAILS_URL);
-    return null;
 }

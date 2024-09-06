@@ -24,9 +24,9 @@ export default function sample_index() {
     //console.log(`[Default] title: ${1} , description: ${params.description} <= ?????`);
     return (<>
         <p>{data?.message ?? ''}</p>
-//        <Header/>
-//        <Forming/>
-//        <Footer/>
+        // <Header/>
+        // <Forming/>
+        // <Footer/>
     </>);
 }
 
