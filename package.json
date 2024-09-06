@@ -9,6 +9,8 @@
     "build:tsc": "remix vite:build && tsc --project ./tsconfig.server.json",
     "dev:alt": "remix dev -c \"node ./server.js\"",
     "preview": "remix-serve ./build/server/index.js",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "start": "cross-env NODE_ENV=production node --enable-source-maps ./server/index.js",
@@ -18,15 +20,14 @@
     "fastly:deploy": "fastly compute publish",
     "build:fastly": "npm run build:remix && npm run build:fastly",
     "build:remix": "remix build",
-    "prebuild:fastly": "compute-js-static-publish --build-static --suppress-framework-warnings"
+    "prebuild:fastly": "compute-js-static-publish --build-static --suppress-framework-warnings",
+    "format": "prettier --check ./{app,tests}/**/*.{ts,tsx}",
+    "format-run": "npx prettier --write ./{app,tests}/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@fastify/middie": "^8.3.1",
-    "@fastify/static": "^7.0.4",
-    "@fastly/js-compute": "^3.21.3",
+    "@fastly/js-compute": "^3.21.4",
     "@fastly/remix-server-adapter": "^4.0.0",
     "@fastly/remix-server-runtime": "^4.0.0",
-    "@mcansh/remix-fastify": "3.3.3",
     "@remix-run/css-bundle": "^2.11.2",
     "@remix-run/express": "^2.11.2",
     "@remix-run/node": "^2.11.2",
@@ -34,12 +35,8 @@
     "@remix-run/serve": "^2.11.2",
     "@remix-run/testing": "^2.11.2",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.19.12",
     "express": "^4.19.2",
-    "fastify": "^4.28.1",
-    "isbot": "^5.1.17",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "isbot": "^5.1.17"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.2",
@@ -47,18 +44,22 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
+    "@vitest/coverage-v8": "^2.0.5",
     "autoprefixer": "^10.4.20",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-react": "^7.35.2",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "jest": "^29.7.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.45",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
     "vite": "^5.4.3",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.5"
   },
   "engines": {
     "node": ">=20.0.0"

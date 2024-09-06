@@ -7,9 +7,10 @@ import {
     isRouteErrorResponse,
     useRouteError, ErrorResponse
 } from "@remix-run/react";
-import "./tailwind.css";
+import {LinksFunction} from "@remix-run/node"
+import styles from "./tailwind.css?url";
 
-export function Layout({ children }) {
+export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html>
            <head>
@@ -19,13 +20,20 @@ export function Layout({ children }) {
                 <Links/>
             </head>
             <body>
-                <h1>Welcome to UMAXICA Homepage!</h1>
-                <hr/>
+            <p>UMAXICA</p>
+            <hr/>
+                {children}
                 <Scripts/>
             </body>
         </html>
     );
 }
+
+
+export default function App() {
+       return <Outlet />;
+}
+
 
 export function ErrorBoundary() {
     const error = useRouteError();
@@ -60,3 +68,7 @@ export const meta: MetaFunction = ({error}) => {
         return [{title: "UMAXICA"},]
     }
 };
+
+export const links: LinksFunction = () => [
+    { rel: "stylesheet", href: styles },
+];
