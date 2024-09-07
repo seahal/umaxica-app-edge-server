@@ -14,8 +14,10 @@
   "include": [
     "./src/**/*.js",
     "./src/**/*.ts",
+    "vitest-setup.ts",
   ],
+  "types": ["vitest/globals",],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

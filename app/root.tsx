@@ -4,7 +4,7 @@ import {
     Link,
     Links,
     Meta,
-    MetaFunction,
+    MetaFunction, NavLink,
     Outlet,
     Scripts,
     useRouteError
@@ -22,10 +22,10 @@ export function Layout({children}: { children: React.ReactNode }) {
             <Links/>
         </head>
         <body>
-            <h1  className="font-sans p-4"><Link to='/'>UMAXICA(Remix)</Link></h1>
-        <hr/>
-        {children}
-        <Scripts/>
+            <h1 className="font-sans p-4"><NavLink to='/'>UMAXICA(Remix)</NavLink></h1>
+            <hr/>
+            {children}
+            <Scripts/>
         </body>
         </html>
     );

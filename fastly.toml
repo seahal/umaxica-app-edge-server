@@ -1,7 +1,7 @@
 # This file describes a Fastly Compute package. To learn more visit:
 # https://www.fastly.com/documentation/reference/compute/fastly-toml
 
-authors = ["seahal@"]
+authors = ["seahal"]
 cloned_from = "./build/"
 description = "studying of remix"
 language = "javascript"
