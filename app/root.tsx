@@ -1,37 +1,38 @@
 import {
+    ErrorResponse,
+    isRouteErrorResponse,
+    Link,
     Links,
     Meta,
+    MetaFunction,
     Outlet,
     Scripts,
-    MetaFunction,
-    isRouteErrorResponse,
-    useRouteError, ErrorResponse
+    useRouteError
 } from "@remix-run/react";
 import {LinksFunction} from "@remix-run/node"
 import styles from "./tailwind.css?url";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({children}: { children: React.ReactNode }) {
     return (
         <html>
-           <head>
-                <meta charSet="utf-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <Meta/>
-                <Links/>
-            </head>
-            <body>
-            <p>UMAXICA</p>
-            <hr/>
-                {children}
-                <Scripts/>
-            </body>
+        <head>
+            <meta charSet="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <Meta/>
+            <Links/>
+        </head>
+        <body>
+            <h1  className="font-sans p-4"><Link to='/'>UMAXICA(Remix)</Link></h1>
+        <hr/>
+        {children}
+        <Scripts/>
+        </body>
         </html>
     );
 }
 
-
 export default function App() {
-       return <Outlet />;
+    return <Outlet/>;
 }
 
 
@@ -70,5 +71,10 @@ export const meta: MetaFunction = ({error}) => {
 };
 
 export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: styles },
+    {rel: "stylesheet", href: styles},
 ];
+
+// TODO: delete below
+export const add = (n: number) => {
+    return (n + 1)
+}

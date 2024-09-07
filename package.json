@@ -10,8 +10,9 @@
     "dev:alt": "remix dev -c \"node ./server.js\"",
     "preview": "remix-serve ./build/server/index.js",
     "test": "vitest",
-    "coverage": "vitest run --coverage",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "coverage": "vitest run --coverage",
+    "format": "npx prettier --write ./{app,test}/**/*.{ts,tsx}",
     "typecheck": "tsc",
     "start": "cross-env NODE_ENV=production node --enable-source-maps ./server/index.js",
     "fastly:preview": "remix-serve ./build/server/index.js",
@@ -21,8 +22,7 @@
     "build:fastly": "npm run build:remix && npm run build:fastly",
     "build:remix": "remix build",
     "prebuild:fastly": "compute-js-static-publish --build-static --suppress-framework-warnings",
-    "format": "prettier --check ./{app,tests}/**/*.{ts,tsx}",
-    "format-run": "npx prettier --write ./{app,tests}/**/*.{ts,tsx}"
+    "test:browser": "vitest --workspace=vitest.workspace.ts"
   },
   "dependencies": {
     "@fastly/js-compute": "^3.21.4",
@@ -40,10 +40,13 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.2",
+    "@testing-library/react": "^16.0.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/browser": "^2.0.5",
     "@vitest/coverage-v8": "^2.0.5",
     "autoprefixer": "^10.4.20",
     "eslint-import-resolver-typescript": "^3.6.3",
@@ -53,6 +56,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "jest": "^29.7.0",
     "npm-run-all": "^4.1.5",
+    "playwright": "^1.47.0",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",

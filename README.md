@@ -1,22 +1,26 @@
-# Default Starter Kit For TypeScript
+# README
 
-Get to know the Fastly Compute environment with a basic starter that demonstrates routing, simple synthetic responses and code comments that cover common patterns.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-**For more details about other starter kits for Compute, see the [Fastly Documentation Hub](https://www.fastly.com/documentation/solutions/starters)**
+Things you may want to cover:
 
-## Features
-* Allow only requests with particular HTTP methods
-* Match request URL path and methods for routing
-* Build synthetic responses at the edge
-
-## Understanding the code
-
-This starter is intentionally lightweight, and requires no dependencies aside from the [`@fastly/js-compute`](https://www.npmjs.com/package/@fastly/js-compute) npm package. It will help you understand the basics of processing requests at the edge using Fastly. This starter includes implementations of common patterns explained in our [using Compute](https://www.fastly.com/documentation/guides/compute/javascript/) and [VCL migration](https://www.fastly.com/documentation/guides/compute/migrate/) guides.
-
-The starter doesn't require the use of any backends. Once deployed, you will have a Fastly service running on Compute that can generate synthetic responses at the edge.
-
-The template uses TypeScript to compile source files in `./src` into JS files in `./build`, which are then wrapped into `./bin/index.wasm` using the `js-compute-runtime` CLI tool bundled with the `@fastly/js-compute` npm package, and bundled into a `.tar.gz` file ready for deployment to Compute.
-
-## Security issues
-
-Please see our [SECURITY.md](SECURITY.md) for guidance on reporting security-related issues.
+* Bun version
+  - Just Do It => `bun -v`
+* System dependencies
+  - Bun => We choiced use Bun as JavaScript Runtime.
+  - Node.js => coverage needs nodejs environment.
+* Configuration
+  - Docker
+    - you need run `docker-compose up` at `/umaxica/app/` directory.
+  - Linux or Mac
+    - may be run on them.
+* How to run the test suite
+  - firstly, you need `docker-compose up` at `/umaxica/app/` directory.
+  - secondly, `bun run test`.
+* Services (job queues, cache servers, search engines, etc.)
+  - CDN
+    - CloudFlare
+* Deployment instructions
+  - Terraform
+  - CloudFlare
