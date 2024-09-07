@@ -10,8 +10,7 @@ import {json} from "@remix-run/node";
 
 export default function IndexComponent() {
     const data = useLoaderData<typeof loader>();
-console.log(data['ENV'])
-    let ENV = data['ENV'] ?? {}
+    const ENV = data['ENV'] ?? {}
 
     return (
         <>
