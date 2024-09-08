@@ -12,3 +12,4 @@ node_modules
 /static-publisher
 .publish-id
 static-publish.rc.js
+/coverage

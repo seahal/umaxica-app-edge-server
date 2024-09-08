@@ -1,16 +1,17 @@
 import {
     ErrorResponse,
     isRouteErrorResponse,
-    Link,
     Links,
     Meta,
-    MetaFunction, NavLink,
+    MetaFunction,
+    NavLink,
     Outlet,
     Scripts,
     useRouteError
 } from "@remix-run/react";
 import {LinksFunction} from "@remix-run/node"
-import styles from "./tailwind.css?url";
+import styles from "./tailwind.css";
+import {cssBundleHref} from "@remix-run/css-bundle";
 
 export function Layout({children}: { children: React.ReactNode }) {
     return (
@@ -22,10 +23,10 @@ export function Layout({children}: { children: React.ReactNode }) {
             <Links/>
         </head>
         <body>
-            <h1 className="font-sans p-4"><NavLink to='/'>UMAXICA(Remix)</NavLink></h1>
-            <hr/>
-            {children}
-            <Scripts/>
+        <h1 className="font-sans p-4"><NavLink to='/'>UMAXICA(Remix)</NavLink></h1>
+        <hr/>
+        {children}
+        <Scripts/>
         </body>
         </html>
     );
@@ -72,6 +73,7 @@ export const meta: MetaFunction = ({error}) => {
 
 export const links: LinksFunction = () => [
     {rel: "stylesheet", href: styles},
+    ...(cssBundleHref ? [{rel: "stylesheet", href: cssBundleHref}] : []),
 ];
 
 // TODO: delete below
