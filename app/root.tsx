@@ -10,7 +10,6 @@ import {
     useRouteError
 } from "@remix-run/react";
 import {LinksFunction} from "@remix-run/node"
-import styles from "./tailwind.css";
 import {cssBundleHref} from "@remix-run/css-bundle";
 
 export function Layout({children}: { children: React.ReactNode }) {
@@ -72,7 +71,6 @@ export const meta: MetaFunction = ({error}) => {
 };
 
 export const links: LinksFunction = () => [
-    {rel: "stylesheet", href: styles},
     ...(cssBundleHref ? [{rel: "stylesheet", href: cssBundleHref}] : []),
 ];
 
