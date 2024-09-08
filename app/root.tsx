@@ -70,10 +70,6 @@ export const meta: MetaFunction = ({error}) => {
     }
 };
 
-export const links: LinksFunction = () => [
-    ...(cssBundleHref ? [{rel: "stylesheet", href: cssBundleHref}] : []),
-];
-
 // TODO: delete below
 export const add = (n: number) => {
     return (n + 1)
