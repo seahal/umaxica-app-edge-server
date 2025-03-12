@@ -13,3 +13,4 @@ node_modules
 .publish-id
 static-publish.rc.js
 /coverage
+.idea/
