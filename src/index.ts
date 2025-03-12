@@ -15,8 +15,13 @@ const app = new Hono({
   getPath: (req) => req.url.replace(/^https?:\/([^?]+).*$/, '$1'),
 })
 
-app.get('/umaxica.app/', (c) => c.text('hello app'))
 app.get('/umaxica.com/', (c) => c.text('hello com'))
+app.get('/umaxica.com/robots.txt', (c) => c.text('User-agent: *\nAllow: /'))
+
+app.get('/umaxica.app/', (c) => c.text('hello app'))
+app.get('/umaxica.app/robots.txt', (c) => c.text('User-agent: *\nAllow: /'))
+
 app.get('/umaxica.org/', (c) => c.text('hello org'))
+app.get('/umaxica.org/robots.txt', (c) => c.text('User-agent: *\nAllow: /'))
 
 export default app
