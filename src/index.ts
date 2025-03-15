@@ -1,5 +1,8 @@
 import { Hono } from 'hono'
 import { secureHeaders } from 'hono/secure-headers'
+import { logger } from 'hono/logger'
+import { languageDetector } from 'hono/language'
+import { compress } from 'hono/compress'
 
 //
 // const app = new Hono()
@@ -32,5 +35,13 @@ app.get('/umaxica.org/sitemap.xml', (c) => c.text(''))
 app.get('/localhost:8787/', (c) => c.text('aaa'))
 
 app.use(secureHeaders());
+app.use(logger())
+app.use(
+  languageDetector({
+    supportedLanguages: ['en', 'ja'], // Must include fallback
+    fallbackLanguage: 'ja', // Required
+  })
+)
+app.use(compress())
 
 export default app
