@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { languageDetector } from 'hono/language'
 import { secureHeaders } from 'hono/secure-headers'
+import { compress } from 'hono/compress'
 
 const app = new Hono({
   getPath: (req) => req.url.replace(/^https?:\/([^?]+).*$/, '$1'),
@@ -24,6 +25,6 @@ app.get('/localhost:8787/lang', (c) => {
 })
 
 app.use(secureHeaders())
-
+app.use(compress())
 
 export default app
