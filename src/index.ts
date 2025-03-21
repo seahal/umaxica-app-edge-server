@@ -13,9 +13,12 @@ app.use(
     fallbackLanguage: 'ja', // Required
   })
 )
-app.get('/umaxica.com/', (c) => c.text('hello com'))
-app.get('/umaxica.app/', (c) => c.text('hello app'))
-app.get('/umaxica.org/', (c) => c.text('hello org'))
+app.use(secureHeaders())
+app.use(compress())
+
+app.get('/umaxica.com/', (c) => c.text('hello com x'))
+app.get('/umaxica.app/', (c) => c.text('hello app x'))
+app.get('/umaxica.org/', (c) => c.text('hello org x'))
 app.notFound((c) => {
   return c.text('Custom 404 Message', 404)
 })
@@ -23,8 +26,5 @@ app.get('/localhost:8787/lang', (c) => {
   const lang = c.get('language')
   return c.text(`Hello! Your language is ${lang}`)
 })
-
-app.use(secureHeaders())
-app.use(compress())
 
 export default app
