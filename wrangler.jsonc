@@ -6,7 +6,8 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
-  }
+  },
+  "minify": true,
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
