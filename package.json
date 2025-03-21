@@ -1,16 +1,14 @@
 {
-  "name": "my-app",
+  "name": "umaxica-app-edge-server",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
-    "hono": "^4.7.4",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.3.0"
+    "hono": "^4.7.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250313.0",
-    "wrangler": "^4.0.0"
+    "@cloudflare/workers-types": "^4.20250320.0",
+    "wrangler": "^4.3.0"
   }
 }

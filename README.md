@@ -1,8 +1,10 @@
+# how to install
 ```
 npm install
-npm run dev
+bun run dev
 ```
 
+# deploy to cloudflare
 ```
 npm run deploy
 ```
