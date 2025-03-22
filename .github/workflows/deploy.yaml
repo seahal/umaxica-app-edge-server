@@ -12,11 +12,12 @@ concurrency:
   cancel-in-progress: true # 実行中ワークフローのキャンセルを有効化
 permissions:
   contents: read
-  issues: write  
-deploy:
-  runs-on: ubuntu-latest
-  timeout-minutes: 60
-  steps:
+  issues: write 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
     - uses: actions/checkout@v4
     - name: Set up Node.js
       uses: actions/setup-node@v4
