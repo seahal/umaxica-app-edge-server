@@ -1,18 +1,33 @@
-name: Deploy
-
+name: Deploy Worker
 on:
   push:
     branches:
       - main
       - develop
-
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+  pull-requests: write 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: '.node-version'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - run: npm ci
+    - run: npm install
+    - name: Build & Deploy Worker
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
