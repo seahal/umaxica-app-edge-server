@@ -19,13 +19,11 @@ jobs:
     timeout-minutes: 60
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
+    - uses: actions/setup-node@v4
       with:
         node-version: '22.x'
     - run: npm ci
-    - name: Install packages
-      run: npm install
+    - run: npm install
     - name: Build & Deploy Worker
       uses: cloudflare/wrangler-action@v3
       with:
