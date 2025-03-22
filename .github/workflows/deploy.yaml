@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: .node-version
+      - run: npm ci
       - name: Install Wrangler
         run: npm install -g wrangler@4.3.0
       - name: Build & Deploy Worker
