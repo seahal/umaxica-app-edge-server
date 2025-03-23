@@ -1,9 +1,8 @@
-name: Deploy Worker
+name: Deploy
 on:
   push:
     branches:
       - main
-      - develop
 defaults:
   run:
     shell: bash
