@@ -32,7 +32,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "4444:3000"
+      - "4444:8787"
     volumes:
       - ./:/main
     depends_on:
