@@ -3,23 +3,22 @@
 	"scripts": {
 		"dev": "wrangler dev --ip=0.0.0.0",
 		"deploy": "wrangler deploy --minify",
-		"format": "npx @biomejs/biome format . --write ",
-		"lint": "npx @biomejs/biome lint .",
+		"format": "biome format . --write ",
+		"lint": "biome lint .",
 		"test": "vitest",
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
-		"hono": "latest",
 		"react": "latest",
 		"react-dom": "latest"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@cloudflare/workers-types": "^4.20250320.0",
 		"dotenv": "^16.3.1",
 		"typescript": "^5.8.2",
 		"vite": "^6.2.2",
-		"vitest": "^3.0.9",
+		"vitest": "latest",
 		"wrangler": "latest"
-	}
+	},
+	"packageManager": "pnpm@10.6.5"
 }
