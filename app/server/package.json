@@ -9,7 +9,6 @@
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
-		"hono": "^4.7.5",
 		"react": "latest",
 		"react-dom": "latest"
 	},
@@ -19,7 +18,7 @@
 		"typescript": "^5.8.2",
 		"vite": "^6.2.4",
 		"vitest": "latest",
-		"wrangler": "^4.6.0"
+		"wrangler": "latest"
 	},
 	"packageManager": "pnpm@10.6.5"
 }
